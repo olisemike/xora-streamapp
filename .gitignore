@@ -1,0 +1,17 @@
+﻿node_modules/
+dist/
+.wrangler/
+.env
+.env.local
+*.log
+.DS_Store
+.vscode/
+.idea/
+*.swp
+*.swo
+.claude/
+.expo/
+nul
+wranglerUNUSED.toml
+.env.example.local
+

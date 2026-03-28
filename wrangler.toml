@@ -1,0 +1,34 @@
+﻿name = "media-stream-app"
+main = "src/index.js"
+compatibility_date = "2024-01-01"
+compatibility_flags = ["nodejs_compat"]
+
+account_id = "7fe26552990070e661d5f182566d039f"
+
+# Static assets - correct format with ASSETS binding
+[assets]
+directory = "public"
+binding = "ASSETS"
+
+[[kv_namespaces]]
+binding = "MEDIA_KV"
+id = "d81a700a2125496e80ce1c018d4e3adb"
+
+[[kv_namespaces]]
+binding = "ANALYTICS_KV"
+id = "d81a700a2125496e80ce1c018d4e3adb"
+
+[vars]
+API_URL = "https://media-stream-app.xorasocial.workers.dev"
+CLOUDFLARE_ACCOUNT_ID = "7fe26552990070e661d5f182566d039f"
+CLOUDFLARE_IMAGES_HASH = "1eL4FEtJQavAd5JjFtJe7Q"
+CLOUDFLARE_IMAGES_DELIVERY_URL = "https://imagedelivery.net/1eL4FEtJQavAd5JjFtJe7Q"
+CLOUDFLARE_STREAM_SUBDOMAIN = "customer-virwr1ukt49zj3yu.cloudflarestream.com"
+ADMIN_EMAIL = "olisemike9@gmail.com"
+MEDIA_PER_PAGE = "30"
+MAX_UPLOAD_SIZE = "536870912"
+VAST_AD_SLOTS = "3"
+VAST_TIMEOUT = "5000"
+ENVIRONMENT = "production"
+CLOUDFLARE_API_TOKEN = ""
+ADMIN_KEY = ""

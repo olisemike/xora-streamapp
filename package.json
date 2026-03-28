@@ -1,0 +1,19 @@
+{
+  "name": "media-stream-app",
+  "version": "1.0.0",
+  "description": "Mobile-optimized media streaming app with Cloudflare",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "wrangler dev --env development",
+    "deploy": "wrangler deploy",
+    "deploy:prod": "wrangler deploy",
+    "lint": "eslint src/",
+    "lint:fix": "eslint src/ --fix"
+  },
+  "dependencies": {
+    "wrangler": "^3.27.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.50.0"
+  }
+}
