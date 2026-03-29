@@ -1,137 +1,46 @@
-# StreamVibe - Mobile Media Streaming App
+﻿# Xora Stream App
 
-A beautiful, mobile-optimized media streaming platform built on Cloudflare Workers with admin upload capabilities, pagination, and VAST ad integration.
+Lightweight media streaming app built on Cloudflare Workers for hosted image/video browsing and admin uploads.
 
-## Features
+## Overview
 
-✨ **Mobile-First Design**
-- Responsive, touch-optimized interface
-- Safe area insets for notched devices
-- Smooth animations and transitions
-- Beautiful gradient UI (inspired by eporner/spankbang)
+This app is a smaller, focused media surface for streaming and media management with Cloudflare-backed storage and delivery.
 
-📱 **Media Management**
-- Support for images and videos
-- 30 media items per page with pagination
-- Beautiful grid layout
-- View counts and download tracking
+## Highlights
 
-🔐 **Admin Upload**
-- Secret endpoint for authenticated uploads
-- Cloudflare Images support
-- Cloudflare Stream support
-- File size validation
+- mobile-friendly media listing and detail views
+- Cloudflare Images and Stream integration
+- admin upload route secured by an admin key
+- pagination, analytics, and ad-slot support
 
-📊 **Advertising**
-- 3 banner ad slots (top, middle, bottom)
-- VAST/VPAID support ready
-- Responsive ad containers
+## Stack
 
-🚀 **Performance**
-- Cloudflare Workers deployment
-- KV storage for metadata
-- Fast image delivery via Cloudflare Images
-- Video streaming via Cloudflare Stream
+- Cloudflare Workers
+- Wrangler
+- asset-served JS frontend
 
-## Setup
+## Local Development
 
-### Prerequisites
-- Node.js 16+
-- Wrangler CLI (`npm install -g wrangler`)
-- Cloudflare account with:
-  - API token with Images & Stream permissions
-  - KV namespace
-
-### Installation
-
-1. **Clone and Install**
 ```bash
-cd streamapp
 npm install
-```
-
-2. **Configure Secrets**
-```bash
-wrangler secret put CF_API_TOKEN
-# Paste your Cloudflare API token
-```
-
-3. **Update wrangler.toml**
-Replace the placeholder values:
-- `account_id`: Your Cloudflare Account ID
-- `ADMIN_KEY`: Change to a secure admin key
-- `CLOUDFLARE_IMAGES_HASH`: Your Images account hash
-- `CLOUDFLARE_STREAM_SUBDOMAIN`: Your Stream subdomain
-
-### Development
-
-```bash
 npm start
-# App runs on http://localhost:8787
 ```
 
-### Deployment
+## Deployment
 
 ```bash
 npm run deploy
 ```
 
-## API Endpoints
+## Configuration
 
-### Get Media List (Paginated)
-```
-GET /api/media?page=1
-Response: { page, perPage, totalItems, totalPages, media[] }
-```
+Use:
+- `.env.example` for local placeholders
+- `wrangler.toml` for worker config
+- Wrangler secrets for real tokens
 
-### Get Media Detail
-```
-GET /api/media/{mediaId}
-Response: { id, title, description, type, views, ... }
-```
+Do not commit live API tokens or real admin keys.
 
-### Admin Upload
-```
-POST /api/upload
-Headers: X-Admin-Key: {admin-key}
-Body: FormData { file, title, description, type }
-```
+## Repo Scope
 
-### Get Ads Configuration
-```
-GET /api/ads-config
-Response: { adSlots, timeout, positions[] }
-```
-
-## Mobile Optimizations
-
-- **Viewport**: Safe area insets for notches and home indicators
-- **Touch**: Larger tap targets (44px minimum)
-- **Performance**: Lazy loading, optimized images
-- **Network**: Progressive loading, caching headers
-- **UX**: Bottom pagination for thumb reach, smooth scrolling
-
-## Ad Integration
-
-Three ad slots are available:
-- **Top Banner**: Above media grid
-- **Middle Banner**: Between grid and pagination
-- **Bottom Banner**: After pagination
-
-To integrate VAST/VPAID ads, modify the `loadAdsConfig()` function in `app.js` with your ad server details.
-
-## Security
-
-- Admin endpoint requires `X-Admin-Key` header
-- File size validation (512MB limit)
-- MIME type checking
-- Origin validation ready (configure in wrangler.toml)
-
-## File Size Limits
-
-- Images: 512MB
-- Videos: 512MB (5GB+ with segmented upload)
-
-## License
-
-MIT
+This repository is the standalone stream/media app.
