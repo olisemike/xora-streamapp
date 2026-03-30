@@ -1,4 +1,4 @@
-﻿# Xora Stream App
+# Xora Stream App
 
 Lightweight media streaming app built on Cloudflare Workers for hosted image/video browsing and admin uploads.
 
@@ -23,8 +23,14 @@ This app is a smaller, focused media surface for streaming and media management 
 
 ```bash
 npm install
-npm start
+npx wrangler dev
 ```
+
+## Screenshots
+
+### Stream Views
+![Stream Screenshot 1](assets/screenshots/stream1.PNG)
+![Stream Screenshot 2](assets/screenshots/stream2.PNG)
 
 ## Deployment
 
